@@ -18,8 +18,8 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: #0f172a; /* 深藍灰背景 */
-      color: #e2e8f0; /* 淺灰文字 */
+      background-color: #0f172a;
+      color: #e2e8f0;
       line-height: 1.6;
     }
 
@@ -43,7 +43,7 @@
     }
 
     a {
-      color: #38bdf8; /* 青色主色 */
+      color: #38bdf8;
       text-decoration: none;
     }
 
@@ -61,7 +61,6 @@
       color: #f1f5f9;
     }
 
-    /* Header / Nav */
     .site-header {
       position: sticky;
       top: 0;
@@ -131,6 +130,43 @@
       background-color: #1e293b;
       border-radius: 8px;
     }
+
+    .section-about .text-block {
+      margin-bottom: 2rem;
+    }
+
+    .about-list {
+      margin: 1rem 0 2rem 1rem;
+      padding: 0;
+    }
+
+    .about-list li {
+      margin: 0.5rem 0;
+      list-style: disc;
+    }
+
+    .about-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.25rem;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+    }
     /* CSS:ABOUT-END */
 
 
@@ -183,19 +219,29 @@
         font-size: 2.5rem;
       }
 
-      .section-about .container,
+      /* 讓 About 區在平板以上呈現左右雙欄 */
+      .section-about .container {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .section-about .text-block {
+        flex: 1;
+        margin-bottom: 0;
+      }
+
+      .section-about .img-block {
+        flex: 1;
+      }
+
       .section-projects .container {
         display: flex;
         gap: 2rem;
         align-items: center;
       }
 
-      .section-about .text-block,
-      .section-projects .text-block {
-        flex: 1;
-      }
-
-      .section-about .img-block,
+      .section-projects .text-block,
       .section-projects .img-block {
         flex: 1;
       }
@@ -207,9 +253,6 @@
 <body>
   <div class="page">
 
-    <!-- ==========================================================
-         Header / 導覽列
-         ========================================================== -->
     <header class="site-header">
       <nav class="nav">
         <div class="nav-left">Your Name · Frontend Dev</div>
@@ -223,90 +266,87 @@
       </nav>
     </header>
 
-
     <main>
 
-      <!-- ==========================================================
-           SECTION: HERO
-           ========================================================== -->
       <!-- SECTION:HERO-START -->
       <section id="hero" class="section section-hero" aria-labelledby="hero-heading">
         <div class="container">
           <h1 id="hero-heading" class="hero-title">這裡是網站 Hero 主視覺區（占位內容）</h1>
-
-          <p>此區將放置一句話自我介紹、前端工程師相關敘述、品牌標語與行動呼籲（例如瀏覽作品集或下載履歷）。</p>
-          <p>目前只是占位內容，之後會使用 Section SDD 的 Prompt 產生正式的 Hero 區版面與文案。</p>
-          <p>請開發者注意：未來產生的新 Hero 區程式碼，請「整段貼在這兩個註解中間」，完全取代這區。</p>
+          <p>此區將放置一句話自我介紹、前端工程師相關敘述、品牌標語與行動呼籲。</p>
+          <p>之後會用 Section SDD 的 Prompt 產生正式內容並覆蓋本區。</p>
 
           <div class="hero-img-wrapper">
-            <img src="https://source.unsplash.com/800x600/?developer,laptop" loading="lazy" alt="正在使用筆電撰寫程式碼的開發者形象照片">
+            <img src="https://media.istockphoto.com/id/2243381404/photo/young-female-engineer-working-in-the-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=VNXhJYow8PTtmpYWXbDcrKm_JArjyqBjNqRwRRdsVKI=" loading="lazy" alt="正在使用筆電撰寫程式碼的開發者形象照片">
           </div>
         </div>
       </section>
       <!-- SECTION:HERO-END -->
 
 
-      <!-- ==========================================================
-           SECTION: ABOUT
-           ========================================================== -->
       <!-- SECTION:ABOUT-START -->
       <section id="about" class="section section-about" aria-labelledby="about-heading">
         <div class="container">
+
           <div class="text-block">
-            <h2 id="about-heading" class="section-title">關於我（占位內容）</h2>
-            <p>這裡是 About 區的占位內容，將來會使用 Section SDD 產生正式的自我介紹、背景與專業描述。</p>
-            <p>開發者請注意：新的 About 區程式碼產生後，請將「整段 section」直接貼回這兩個註解中間，以完全覆蓋本區。</p>
+            <h2 id="about-heading" class="section-title">關於我</h2>
+
+            <p>目前我主要從事前端工程、程式教學與接案，擅長將複雜的概念整理成好理解的內容，也熟悉多種網頁開發工具與技術。</p>
+
+            <p>我的背景讓我非常重視溝通，也喜歡把東西講清楚、講明白。在合作過程中，我傾向先釐清需求，再一步一步把事情做到位。</p>
+
+            <ul class="about-list">
+              <li>能協助你規劃前端架構與畫面呈現</li>
+              <li>可以用清楚的方式解釋技術與開發過程</li>
+              <li>擅長將需求拆解成能快速落地的任務</li>
+            </ul>
+
+            <div class="about-actions">
+              <a class="btn" href="#projects">查看作品集</a>
+              <a class="btn" href="#contact">聯絡我</a>
+            </div>
           </div>
+
           <div class="img-block">
-            <img src="https://source.unsplash.com/800x600/?workspace,desk" loading="lazy" alt="前端工程師的工作桌面示意圖">
+            <img src="https://media.istockphoto.com/id/2158761592/photo/team-members-examine-esg-related-documents-pointing-and-discussing-investment-strategies-for.jpg?s=1024x1024&w=is&k=20&c=vqYoQcOT9nsHJXmEFL9mFxG3uCLlOYb1iWggM1uiGCo=" loading="lazy" alt="正在撰寫程式碼的工程師示意照片">
           </div>
+
         </div>
       </section>
       <!-- SECTION:ABOUT-END -->
 
 
-      <!-- ==========================================================
-           SECTION: SKILLS
-           ========================================================== -->
       <!-- SECTION:SKILLS-START -->
       <section id="skills" class="section section-skills" aria-labelledby="skills-heading">
         <div class="container">
           <h2 id="skills-heading" class="section-title">技能（占位內容）</h2>
           <p>此區將來會放前端技能列表、熟悉的技術、工具與專長方向，目前僅為占位版面。</p>
-          <p>開發者請注意：未來請將新的 Skills 區程式碼整段貼在這兩個註解之間，完全取代這區。</p>
+          <p>之後會用 Section SDD 產生新的 section，請將程式碼整段貼入這兩個註解間以取代本區。</p>
         </div>
       </section>
       <!-- SECTION:SKILLS-END -->
 
 
-      <!-- ==========================================================
-           SECTION: PROJECTS
-           ========================================================== -->
       <!-- SECTION:PROJECTS-START -->
       <section id="projects" class="section section-projects" aria-labelledby="projects-heading">
         <div class="container">
           <div class="text-block">
             <h2 id="projects-heading" class="section-title">作品集（占位內容）</h2>
             <p>這裡未來會展示你的作品集卡片、案例圖片、技術標籤與連結，目前是示意用途。</p>
-            <p>開發者請記住：請將未來生成的 Projects 全段 section 程式碼貼入這兩個註解中間覆蓋此區。</p>
+            <p>未來請把新的 Projects 區塊程式碼貼在這兩個註解中間。</p>
           </div>
           <div class="img-block">
-            <img src="https://source.unsplash.com/800x600/?code,web" loading="lazy" alt="前端作品範例示意圖片">
+            <img src="https://plus.unsplash.com/premium_photo-1661335273939-beb340be439a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZW5naW5lZXJpbmd8ZW58MHx8MHx8fDA%3D" loading="lazy" alt="前端作品範例示意圖片">
           </div>
         </div>
       </section>
       <!-- SECTION:PROJECTS-END -->
 
 
-      <!-- ==========================================================
-           SECTION: CONTACT
-           ========================================================== -->
       <!-- SECTION:CONTACT-START -->
       <section id="contact" class="section section-contact" aria-labelledby="contact-heading">
         <div class="container">
           <h2 id="contact-heading" class="section-title">聯絡我（占位內容）</h2>
-          <p>這裡未來會展示你的聯絡方式、Email、社群連結等資訊。目前為占位文字。</p>
-          <p>請開發者記得：未來的 Contact 區段生成後，請把新的 section 程式碼「整段」貼在這兩個註解中間，以取代本區。</p>
+          <p>本區將顯示 Email、社群與聯絡方式，目前為占位文字。</p>
 
           <div class="contact-links">
             <a href="mailto:hello@example.com">Email：hello@example.com</a>
@@ -319,7 +359,6 @@
       <!-- SECTION:CONTACT-END -->
 
     </main>
-
 
     <footer class="section" style="text-align:center; font-size:0.85rem; padding:2rem 1rem; color:#94a3b8;">
       © 2025 Your Name. All rights reserved.
